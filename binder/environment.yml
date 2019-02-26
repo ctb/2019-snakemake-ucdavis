@@ -1,0 +1,10 @@
+channels:
+  - bioconda
+  - defaults
+  - conda-forge
+dependencies:
+  - sourmash
+  - trimmomatic
+  - snakemake
+  - multiqc
+  - fastqc
