@@ -471,7 +471,7 @@ Points to make:
 * the rule name doesn't really matter, it's mostly for debugging. It just needs to be "boring" (text, underscores, etc. only)
 
 
-### Providing input files explicitly the multiqc rule
+### Providing input files explicitly to the multiqc rule
 
 The third problem, that multiqc doesn't have any input dependencies, is a bit harder to fix.
 
@@ -588,9 +588,24 @@ rule run_multiqc:
 and we can rerun it from scratch by doing:
 
 ```
-rm data/*.html
+rm data/*.html multiqc_report.html
 snakemake
 ```
+
+### Digression: what files snakemake check in order to decide about rerunning?
+
+snakemake will compare only at the very initial input files, and the
+specific output file(s) you are requesting, to decide if it needs to
+rerun the workflow.
+
+In practical terms, this means that if you just delete the
+`data/*.html` files above but leave `multiqc_report.html` around,
+snakemake won't rerun anything. You have to delete both the
+intermediaries _and_ the end output files (as we do in the previous
+section), _or_ update the raw input files, in order to force
+rerunning.
+
+([This is a feature, not a bug](https://bitbucket.org/snakemake/snakemake/issues/885/snakemake-sometimes-doesnt-run-rule-when) - it helps deal with data-intensive pipelines where the intermediate files are really big.)
 
 ### Making a `clean` rule
 
