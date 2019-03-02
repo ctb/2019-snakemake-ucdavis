@@ -415,7 +415,7 @@ rule run_multiqc:
     "multiqc_report.html",
     directory("multiqc_data")
   shell:
-    "multiqc data"
+    "multiqc data/"
 ```
 to the bottom of the file. (Note, you need to tell snakemake if an output is a directory.)
 
@@ -460,7 +460,7 @@ rule run_multiqc:
     "multiqc_report.html",
     directory("multiqc_data")
   shell:
-    "multiqc data"
+    "multiqc data/"
 ```
 
 Yay, that seems to work!
@@ -488,7 +488,7 @@ rule run_multiqc:
     "multiqc_report.html",
     directory("multiqc_data")
   shell:
-    "multiqc data"
+    "multiqc data/"
 ```
 
 This will work, but there are two reasons this is not great.
@@ -537,7 +537,7 @@ rule run_multiqc:
     "multiqc_report.html",
     directory("multiqc_data")
   shell:
-    "multiqc data"
+    "multiqc data/"
 ```
 
 Points to make:
@@ -582,7 +582,7 @@ rule run_multiqc:
     "multiqc_report.html",
     directory("multiqc_data")
   shell:
-    "multiqc data"
+    "multiqc data/"
 ```
 
 and we can rerun it from scratch by doing:
@@ -798,7 +798,7 @@ rule run_multiqc:
     "multiqc_report.html",
     directory("multiqc_data")
   shell:
-    "multiqc data"
+    "multiqc data/"
 
 rule trim_reads:
   input:
@@ -815,6 +815,7 @@ rule trim_reads:
       MINLEN:25"""
 ```
 
+Take a look at [glob_wildcards](https://snakemake.readthedocs.io/en/stable/project_info/faq.html#how-do-i-run-my-rule-on-all-files-of-a-certain-directory) as well.
 
 ### Final thoughts - writing your own snakefile
 
