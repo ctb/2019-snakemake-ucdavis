@@ -592,7 +592,7 @@ rm data/*.html multiqc_report.html
 snakemake
 ```
 
-### Digression: what files snakemake check in order to decide about rerunning?
+### Digression: what files does snakemake check in order to decide about rerunning?
 
 snakemake will compare only at the very initial input files, and the
 specific output file(s) you are requesting, to decide if it needs to
