@@ -594,9 +594,9 @@ snakemake
 
 ### Digression: what files does snakemake check in order to decide about rerunning?
 
-snakemake will compare only at the very initial input files, and the
-specific output file(s) you are requesting, to decide if it needs to
-rerun the workflow.
+snakemake will compare only the dates on the very initial input files,
+and the specific output file(s) you are requesting, to decide if it
+needs to rerun the workflow.
 
 In practical terms, this means that if you just delete the
 `data/*.html` files above but leave `multiqc_report.html` around,
