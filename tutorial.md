@@ -4,6 +4,8 @@ Author: C. Titus Brown, titus@idyll.org
 
 No license; the below content is under CC0. (Do with it what you will, and I hope it's useful!)
 
+The official home of this material is on GitHub, at [ctb/2019-snakemake-ucdavis/](https://github.com/ctb/2019-snakemake-ucdavis/blob/master/tutorial.md).
+
 [toc]
 
 ## Front matter
